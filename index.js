@@ -89,6 +89,26 @@ class Candidate{
 // updateProgress(studentName, value) that modifies the student’s progress. Create an async method generateCertificate(studentName) that 
 // returns a Promise resolving only if the progress is 100, otherwise reject with "Incomplete progress".
 
+class Course{
+  constructor(title,instructor,students){
+    this.title = title;
+    this.instructor = instructor;
+    this.students = students;
+  }
+  updateProgress(studentName,value){
+  const student = this.students.find(st => st.name === studentName);
+if (student){
+  student.progress = value;
+}
+  }
+  async generateCertificate(studentName){
+    return new Promise((resolve,reject) =>{
+
+    }
+    )
+  }
+}
+
 
 // Create a StockTracker class with a property watchlist (array of objects with symbol, threshold, currentPrice). Add a method updatePrice(symbol, newPrice) 
 // that updates the stock’s current price. Write an async method checkAlerts() that loops through the watchlist and returns a Promise resolving with a list 
